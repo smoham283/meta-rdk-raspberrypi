@@ -5,7 +5,6 @@ LICENSE = "MIT"
 PACKAGE_ARCH = "${VENDOR_LAYER_EXTENSION}"
 
 inherit packagegroup
-inherit versioned-packagegroup-install-support
 
 DEPENDS = " virtual/kernel make-mod-scripts"
 
