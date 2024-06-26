@@ -44,4 +44,5 @@ RDEPENDS_${PN}:append:rdkv-oss = "\
         pango \
 	pulseaudio \
 	libmms \
+    wayland-default-egl \
         "
