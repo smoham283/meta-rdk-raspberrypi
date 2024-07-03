@@ -11,7 +11,8 @@ DEPENDS = " virtual/kernel make-mod-scripts"
 PV = "1.0.0"
 PR = "r0"
 
-RDEPENDS_${PN} = "\
+RDEPENDS_${PN} = " \
+        sysint-soc \
         westeros-soc-drm \
         "
 
@@ -22,26 +23,26 @@ RDEPENDS_${PN}:append:raspberrypi4 = " \
         "
 
 # These packages shall be moved to OSS layer in future.
-RDEPENDS_${PN}:append:rdkv-oss = "\
+RDEPENDS_${PN}:append:rdkv-oss = " \
         cairo \
+        essos \
         gstreamer1.0 \
         gstreamer1.0-libav \
-        gstreamer1.0-plugins-base \
-	gstreamer1.0-plugins-base-meta \
-        gstreamer1.0-plugins-good \
-	gstreamer1.0-plugins-good-meta \
         gstreamer1.0-plugins-bad \
-	gstreamer1.0-plugins-bad-meta \
-	westeros-simplebuffer \
-        westeros-simpleshell \
-        westeros \
-        essos \
-        westeros-sink \
-        libepoxy \
+        gstreamer1.0-plugins-bad-meta \
+        gstreamer1.0-plugins-base \
+        gstreamer1.0-plugins-base-meta \
+        gstreamer1.0-plugins-good \
+        gstreamer1.0-plugins-good-meta \
         libdrm \
+        libepoxy \
+        libmms \
         librsvg \
         mpg123 \
         pango \
-	pulseaudio \
-	libmms \
+        pulseaudio \
+        westeros \
+        westeros-simplebuffer \
+        westeros-simpleshell \
+        westeros-sink \
         "
