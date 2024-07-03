@@ -15,7 +15,9 @@ do_install() {
         # Dropbear SSH banner
         install -d ${D}${sysconfdir}
         install -m 0644 ${S}/dropbear/sshbanner.txt ${D}${sysconfdir}
+        # Provide the OEM/SoC device.properties
+        install -m 0644 ${S}/etc/device-vendor.properties ${D}${sysconfdir}
 }
  
 FILES_${PN} += "${systemd_unitdir}/system/dropbear.service.d/00-dropbear.conf"
-FILES_${PN} += "${sysconfdir}/sshbanner.txt"
+FILES_${PN} += "${sysconfdir}/*"
