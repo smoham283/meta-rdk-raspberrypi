@@ -41,6 +41,7 @@ RDEPENDS_${PN}:append:rdkv-oss = " \
         mpg123 \
         pango \
         pulseaudio \
+        wayland-default-egl \
         westeros \
         westeros-simplebuffer \
         westeros-simpleshell \
