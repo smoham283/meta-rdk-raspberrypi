@@ -17,6 +17,9 @@ do_install() {
         install -m 0644 ${S}/dropbear/sshbanner.txt ${D}${sysconfdir}
         # Provide the OEM/SoC device.properties
         install -m 0644 ${S}/etc/device-vendor.properties ${D}${sysconfdir}
+        # RDKE-122: add wpeframework vendor env
+        install -d ${D}${sysconfdir}/wpeframework
+        install -m 0644 ${S}/WPEFramework.env ${D}${sysconfdir}/wpeframework/WPEFramework.env
 }
  
 FILES_${PN} += "${systemd_unitdir}/system/dropbear.service.d/00-dropbear.conf"
