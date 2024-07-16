@@ -3,8 +3,7 @@ SECTION = "console/utils"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b1e01b26bacfc2232046c90a330332b3"
  
-#SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-sysint-raspberrypi4;${CMF_GIT_SRC_URI_SUFFIX}"
-SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-sysint-raspberrypi4;protocol=${CMF_GIT_PROTOCOL};branch=4-vendor-specific-thunder-environment"
+SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-sysint-raspberrypi4;${CMF_GIT_SRC_URI_SUFFIX}"
 
 S = "${WORKDIR}/git"
 
