@@ -7,20 +7,22 @@ SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-sysint-raspberrypi4;${CMF_GIT_SRC_URI_SUFF
 S = "${WORKDIR}/git"
 
 do_compile[noexec] = "1"
- 
+
 do_install() {
-        # RDKE-115: Dropbear drop-in conf for RPi
         install -d ${D}${systemd_unitdir}/system
+        # RDKE-122: WPEFramework drop-in
+        install -D -m 0644 ${S}/systemd_units/00-wpeframework-vendor.conf ${D}${systemd_unitdir}/system/wpeframework.service.d/00-wpeframework-vendor.conf
+
+        # RDKE-115: Dropbear drop-in conf for RPi
         install -D -m 0644 ${S}/systemd_units/00-dropbear-vendor.conf ${D}${systemd_unitdir}/system/dropbear.service.d/00-dropbear.conf
+
         # Dropbear SSH banner
         install -d ${D}${sysconfdir}
         install -m 0644 ${S}/dropbear/sshbanner.txt ${D}${sysconfdir}
+
         # Provide the OEM/SoC device.properties
         install -m 0644 ${S}/etc/device-vendor.properties ${D}${sysconfdir}
-        # RDKE-122: add wpeframework vendor env
-        install -d ${D}${sysconfdir}/wpeframework
-        install -m 0644 ${S}/WPEFramework.env ${D}${sysconfdir}/wpeframework/WPEFramework.env
 }
- 
-FILES_${PN} += "${systemd_unitdir}/system/dropbear.service.d/00-dropbear.conf"
+
+FILES_${PN} += "${systemd_unitdir}/system/*"
 FILES_${PN} += "${sysconfdir}/*"
