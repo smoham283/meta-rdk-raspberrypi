@@ -12,6 +12,7 @@ PV = "1.0.0"
 PR = "r0"
 
 RDEPENDS_${PN} = " \
+        pi-bluetooth \
         sysint-soc \
         westeros-soc-drm \
         "
@@ -46,5 +47,4 @@ RDEPENDS_${PN}:append:rdkv-oss = " \
         westeros-simplebuffer \
         westeros-simpleshell \
         westeros-sink \
-        pi-bluetooth \
         "
