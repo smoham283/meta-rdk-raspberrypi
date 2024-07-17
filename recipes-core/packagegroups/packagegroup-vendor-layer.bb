@@ -46,4 +46,5 @@ RDEPENDS_${PN}:append:rdkv-oss = " \
         westeros-simplebuffer \
         westeros-simpleshell \
         westeros-sink \
+        pi-bluetooth \
         "
