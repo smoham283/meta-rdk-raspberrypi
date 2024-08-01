@@ -13,19 +13,4 @@ RPROVIDES_${PN} = "virtual/hdmicec-hal"
 
 DEPENDS = "hdmicecheader"
 
-do_compile() {
-    oe_runmake -C ${S}/ -f Makefile clean
-    oe_runmake -C ${S}/ -f Makefile
-}
-
-do_install() {
-    install -d ${D}${libdir}/
-    install -m 644 ${S}/libRCECHal.so ${D}${libdir}/
-}
-
-PACKAGES = "${PN} ${PN}-dev ${PN}-dbg"
-
-FILES_${PN} += "${libdir}/lib*.so"
-FILES_${PN}-dbg +="${libdir}/.debug/*"
-
-INSANE_SKIP_${PN} += "ldflags"
+inherit cmake
